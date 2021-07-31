@@ -367,6 +367,10 @@ class PlayState extends MusicBeatState
 				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
 			case 'ron':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBack'));
+			case 'ayo':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diaman'));
+			case 'bloodshed':
+				dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamane'));
 		}
 
 		//defaults if no stage was found in chart
@@ -1114,6 +1118,10 @@ class PlayState extends MusicBeatState
 				case 'thorns':
 					schoolIntro(doof);
 				case 'ron':
+					schoolIntro(doof);
+				case 'ayo':
+					schoolIntro(doof);
+				case 'bloodshed':
 					schoolIntro(doof);
 				default:
 					startCountdown();
