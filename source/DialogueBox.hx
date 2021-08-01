@@ -138,7 +138,7 @@ class DialogueBox extends FlxSpriteGroup
 		} else if (PlayState.SONG.song.toLowerCase() == 'ron')
 		{
 			portraitLeft = new FlxSprite(-1500, 10);
-			portraitLeft.frames = Paths.getSparrowAtlas('portraits/ronPortrait', 'shared');
+			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
 			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
 			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
 			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
@@ -156,7 +156,7 @@ class DialogueBox extends FlxSpriteGroup
 		}  else if (PlayState.SONG.song.toLowerCase() == 'ayo')
 		{
 			portraitLeft = new FlxSprite(-1500, 10);
-			portraitLeft.frames = Paths.getSparrowAtlas('portraits/madronPortrait', 'shared');
+			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
 			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
 			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
 			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
@@ -174,7 +174,7 @@ class DialogueBox extends FlxSpriteGroup
 		}   else if (PlayState.SONG.song.toLowerCase() == 'bloodshed')
 		{
 			portraitLeft = new FlxSprite(-1500, 10);
-			portraitLeft.frames = Paths.getSparrowAtlas('portraits/hellronPortrait', 'shared');
+			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
 			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
 			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
 			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
@@ -194,7 +194,7 @@ class DialogueBox extends FlxSpriteGroup
 
 
 		portraitRight = new FlxSprite(-50, 40);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
+		portraitRight.frames = Paths.getSparrowAtlas('diaman/bfPortrait');
 		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter instance 1', 24, false);
 		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.15));
 		portraitRight.updateHitbox();
