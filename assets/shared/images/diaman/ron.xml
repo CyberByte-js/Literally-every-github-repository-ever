@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ron.png">
+	<SubTexture name="ronthumbup" x="74" y="95" width="264" height="286"/>
+	<SubTexture name="ronflip" x="390" y="99" width="266" height="278"/>
+	<SubTexture name="ronpissed" x="677" y="104" width="241" height="280"/>
+	<SubTexture name="ronshock" x="987" y="107" width="254" height="281"/>
+	<SubTexture name="ronsad" x="81" y="444" width="214" height="283"/>
+	<SubTexture name="ronwhateva" x="363" y="446" width="324" height="280"/>
+	<SubTexture name="ronhell" x="685" y="452"  width="214" height="280"/>
+	<SubTexture name="ronmad" x="1001" y="455" width="263" height="279"/>
+</TextureAtlas>
