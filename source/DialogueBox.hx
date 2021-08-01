@@ -17,6 +17,7 @@ class DialogueBox extends FlxSpriteGroup
 	var box:FlxSprite;
 
 	var curCharacter:String = '';
+	var curAnim:String = '';
 
 	var dialogue:Alphabet;
 	var dialogueList:Array<String> = [];
@@ -138,7 +139,15 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			portraitLeft = new FlxSprite(-1500, 10);
 			portraitLeft.frames = Paths.getSparrowAtlas('portraits/ronPortrait', 'shared');
-			portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
+			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
+			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
+			portraitLeft.animation.addByIndices('pissed', 'ronpissed', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('shock', 'ronshock', 24, false);
+			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('sad', 'ronsad', 24, false);
+			portraitLeft.animation.addByIndices('hell', 'ronhell', [3], "", 24, false);
+			portraitLeft.animation.addByIndices('mad', 'ronmad', [3], "", 24, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -148,7 +157,15 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			portraitLeft = new FlxSprite(-1500, 10);
 			portraitLeft.frames = Paths.getSparrowAtlas('portraits/madronPortrait', 'shared');
-			portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
+			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
+			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
+			portraitLeft.animation.addByIndices('pissed', 'ronpissed', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('shock', 'ronshock', 24, false);
+			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('sad', 'ronsad', 24, false);
+			portraitLeft.animation.addByIndices('hell', 'ronhell', [3], "", 24, false);
+			portraitLeft.animation.addByIndices('mad', 'ronmad', [3], "", 24, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -158,7 +175,15 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			portraitLeft = new FlxSprite(-1500, 10);
 			portraitLeft.frames = Paths.getSparrowAtlas('portraits/hellronPortrait', 'shared');
-			portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
+			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
+			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
+			portraitLeft.animation.addByIndices('pissed', 'ronpissed', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('shock', 'ronshock', 24, false);
+			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
+			portraitLeft.animation.addByPrefix('sad', 'ronsad', 24, false);
+			portraitLeft.animation.addByIndices('hell', 'ronhell', [3], "", 24, false);
+			portraitLeft.animation.addByIndices('mad', 'ronmad', [3], "", 24, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -304,14 +329,14 @@ class DialogueBox extends FlxSpriteGroup
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
-					portraitLeft.animation.play('enter');
+					portraitLeft.animation.play(curAnim);
 				}
 			case 'bf':
 				portraitLeft.visible = false;
 				if (!portraitRight.visible)
 				{
 					portraitRight.visible = true;
-					portraitRight.animation.play('enter');
+					portraitRight.animation.play(curAnim);
 				}
 		}
 	}
@@ -320,6 +345,8 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		var splitName:Array<String> = dialogueList[0].split(":");
 		curCharacter = splitName[1];
-		dialogueList[0] = dialogueList[0].substr(splitName[1].length + 2).trim();
+		curAnim = splitName[2];
+		
+		dialogueList[0] = dialogueList[0].substr(splitName[1].length + splitName[2].length  + 3).trim();
 	}
 }
