@@ -17,7 +17,6 @@ class DialogueBox extends FlxSpriteGroup
 	var box:FlxSprite;
 
 	var curCharacter:String = '';
-	var curAnim:String = '';
 
 	var dialogue:Alphabet;
 	var dialogueList:Array<String> = [];
@@ -125,28 +124,11 @@ class DialogueBox extends FlxSpriteGroup
 		if (!hasDialog)
 			return;
 
-		if (PlayState.SONG.song.toLowerCase() == 'senpai' || PlayState.SONG.song.toLowerCase() == 'roses' || PlayState.SONG.song.toLowerCase() == 'thorns')
+		if (PlayState.SONG.song.toLowerCase() == 'ron')
 		{
-			portraitLeft = new FlxSprite(-20, 40);
-			portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
-			portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
-			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.9));
-			portraitLeft.updateHitbox();
-			portraitLeft.scrollFactor.set();
-			add(portraitLeft);
-			portraitLeft.visible = false;
-		} else if (PlayState.SONG.song.toLowerCase() == 'ron')
-		{
-			portraitLeft = new FlxSprite(-300, 250);
-			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
-			portraitLeft.animation.addByNames('enter', ['ronthumbup'], 24, false);
-			portraitLeft.animation.addByNames('idle', ['ronwhateva'], 24, false);
-			portraitLeft.animation.addByNames('flip', ['ronflip'], 24, false);
-			portraitLeft.animation.addByNames('pissed', ['ronpissed'], 24, false);
-			portraitLeft.animation.addByNames('shock', ['ronshock'], 24, false);
-			portraitLeft.animation.addByNames('sad', ['ronsad'], 24, false);
-			portraitLeft.animation.addByNames('hell', ['ronhell'], 24, false);
-			portraitLeft.animation.addByNames('mad', ['ronmad'], 30, false);
+			portraitLeft = new FlxSprite(-1500, 10);
+			portraitLeft.frames = Paths.getSparrowAtlas('portraits/ronPortrait', 'shared');
+			portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -154,16 +136,9 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft.visible = false;
 		}  else if (PlayState.SONG.song.toLowerCase() == 'ayo')
 		{
-			portraitLeft = new FlxSprite(-300, 250);
-			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
-			portraitLeft.animation.addByNames('enter', ['ronthumbup'], 24, false);
-			portraitLeft.animation.addByNames('idle', ['ronwhateva'], 24, false);
-			portraitLeft.animation.addByNames('flip', ['ronflip'], 24, false);
-			portraitLeft.animation.addByNames('pissed', ['ronpissed'], 24, false);
-			portraitLeft.animation.addByNames('shock', ['ronshock'], 24, false);
-			portraitLeft.animation.addByNames('sad', ['ronsad'], 24, false);
-			portraitLeft.animation.addByNames('hell', ['ronhell'], 24, false);
-			portraitLeft.animation.addByNames('mad', ['ronmad'], 30, false);
+			portraitLeft = new FlxSprite(-1500, 10);
+			portraitLeft.frames = Paths.getSparrowAtlas('portraits/madronPortrait', 'shared');
+			portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -171,28 +146,20 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft.visible = false;
 		}   else if (PlayState.SONG.song.toLowerCase() == 'bloodshed')
 		{
-			portraitLeft = new FlxSprite(-300, 250);
-			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
-			portraitLeft.animation.addByNames('enter', ['ronthumbup'], 24, false);
-			portraitLeft.animation.addByNames('idle', ['ronwhateva'], 24, false);
-			portraitLeft.animation.addByNames('flip', ['ronflip'], 24, false);
-			portraitLeft.animation.addByNames('pissed', ['ronpissed'], 24, false);
-			portraitLeft.animation.addByNames('shock', ['ronshock'], 24, false);
-			portraitLeft.animation.addByNames('sad', ['ronsad'], 24, false);
-			portraitLeft.animation.addByNames('hell', ['ronhell'], 24, false);
-			portraitLeft.animation.addByNames('mad', ['ronmad'], 30, false);
+			portraitLeft = new FlxSprite(-1500, 10);
+			portraitLeft.frames = Paths.getSparrowAtlas('portraits/hellronPortrait', 'shared');
+			portraitLeft.animation.addByPrefix('enter', 'Ron Enter', 24, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
 			add(portraitLeft);
 			portraitLeft.visible = false;
 		}
-		
 
-		portraitRight = new FlxSprite(700, 100);
-		portraitRight.frames = Paths.getSparrowAtlas('diaman/bfPortrait');
-		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter instance 1', 24, false);
-		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.15));
+		portraitRight = new FlxSprite(800, FlxG.height - 489);
+		portraitRight.frames = Paths.getSparrowAtlas('portraits/boyfriendPort', 'shared');
+		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, true);
+		portraitRight.setGraphicSize(Std.int(portraitRight.width * 0.8));
 		portraitRight.updateHitbox();
 		portraitRight.scrollFactor.set();
 		add(portraitRight);
@@ -206,9 +173,13 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 
+		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.image('weeb/pixelUI/hand_textbox'));
+		add(handSelect);
+
+
 		if (!talkingRight)
 		{
-			// box.flipX = true;
+			box.flipX;
 		}
 
 		dropText = new FlxText(242, 502, Std.int(FlxG.width * 0.6), "", 32);
@@ -321,14 +292,16 @@ class DialogueBox extends FlxSpriteGroup
 				if (!portraitLeft.visible)
 				{
 					portraitLeft.visible = true;
-					portraitLeft.animation.play(curAnim);
+					portraitLeft.animation.play('enter');
 				}
 			case 'bf':
 				portraitLeft.visible = false;
 				if (!portraitRight.visible)
 				{
 					portraitRight.visible = true;
-					portraitRight.animation.play(curAnim);
+					trace('bf pog!!!');
+					portraitRight.animation.play('enter');
+					swagDialogue.sounds =  [FlxG.sound.load(Paths.sound('pixelText'), 0.6)];
 				}
 		}
 	}
@@ -337,8 +310,6 @@ class DialogueBox extends FlxSpriteGroup
 	{
 		var splitName:Array<String> = dialogueList[0].split(":");
 		curCharacter = splitName[1];
-		curAnim = splitName[2];
-		
-		dialogueList[0] = dialogueList[0].substr(splitName[1].length + splitName[2].length  + 3).trim();
+		dialogueList[0] = dialogueList[0].substr(splitName[1].length + 2).trim();
 	}
 }
