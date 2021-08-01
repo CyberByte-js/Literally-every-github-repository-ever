@@ -193,7 +193,7 @@ class DialogueBox extends FlxSpriteGroup
 		
 
 
-		portraitRight = new FlxSprite(-50, 40);
+		portraitRight = new FlxSprite(700, 100);
 		portraitRight.frames = Paths.getSparrowAtlas('diaman/bfPortrait');
 		portraitRight.animation.addByPrefix('enter', 'BF Portrait Enter instance 1', 24, false);
 		portraitRight.setGraphicSize(Std.int(portraitRight.width * PlayState.daPixelZoom * 0.15));
