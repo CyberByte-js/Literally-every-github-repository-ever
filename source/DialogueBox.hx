@@ -139,15 +139,14 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			portraitLeft = new FlxSprite(-300, 250);
 			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
-			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
-			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
-			portraitLeft.animation.addByIndices('pissed', 'ronpissed', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('shock', 'ronshock', 24, false);
-			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('sad', 'ronsad', 24, false);
-			portraitLeft.animation.addByIndices('hell', 'ronhell', [3], "", 24, false);
-			portraitLeft.animation.addByIndices('mad', 'ronmad', [3], "", 24, false);
+			portraitLeft.animation.addByNames('enter', ['ronthumbup'], 24, false);
+			portraitLeft.animation.addByNames('idle', ['ronwhateva'], 24, false);
+			portraitLeft.animation.addByNames('flip', ['ronflip'], 24, false);
+			portraitLeft.animation.addByNames('pissed', ['ronpissed'], 24, false);
+			portraitLeft.animation.addByNames('shock', ['ronshock'], 24, false);
+			portraitLeft.animation.addByNames('sad', ['ronsad'], 24, false);
+			portraitLeft.animation.addByNames('hell', ['ronhell'], 24, false);
+			portraitLeft.animation.addByNames('mad', ['ronmad'], 30, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -157,15 +156,14 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			portraitLeft = new FlxSprite(-300, 250);
 			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
-			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
-			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
-			portraitLeft.animation.addByIndices('pissed', 'ronpissed', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('shock', 'ronshock', 24, false);
-			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('sad', 'ronsad', 24, false);
-			portraitLeft.animation.addByIndices('hell', 'ronhell', [3], "", 24, false);
-			portraitLeft.animation.addByIndices('mad', 'ronmad', [3], "", 24, false);
+			portraitLeft.animation.addByNames('enter', ['ronthumbup'], 24, false);
+			portraitLeft.animation.addByNames('idle', ['ronwhateva'], 24, false);
+			portraitLeft.animation.addByNames('flip', ['ronflip'], 24, false);
+			portraitLeft.animation.addByNames('pissed', ['ronpissed'], 24, false);
+			portraitLeft.animation.addByNames('shock', ['ronshock'], 24, false);
+			portraitLeft.animation.addByNames('sad', ['ronsad'], 24, false);
+			portraitLeft.animation.addByNames('hell', ['ronhell'], 24, false);
+			portraitLeft.animation.addByNames('mad', ['ronmad'], 30, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -175,15 +173,14 @@ class DialogueBox extends FlxSpriteGroup
 		{
 			portraitLeft = new FlxSprite(-300, 250);
 			portraitLeft.frames = Paths.getSparrowAtlas('diaman/ron', 'shared');
-			portraitLeft.animation.addByPrefix('enter', 'ronthumbup', 24, false);
-			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('flip', 'ronflip', 24, false);
-			portraitLeft.animation.addByIndices('pissed', 'ronpissed', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('shock', 'ronshock', 24, false);
-			portraitLeft.animation.addByIndices('idle', 'ronwhateva', [3], "", 24, false);
-			portraitLeft.animation.addByPrefix('sad', 'ronsad', 24, false);
-			portraitLeft.animation.addByIndices('hell', 'ronhell', [3], "", 24, false);
-			portraitLeft.animation.addByIndices('mad', 'ronmad', [3], "", 24, false);
+			portraitLeft.animation.addByNames('enter', ['ronthumbup'], 24, false);
+			portraitLeft.animation.addByNames('idle', ['ronwhateva'], 24, false);
+			portraitLeft.animation.addByNames('flip', ['ronflip'], 24, false);
+			portraitLeft.animation.addByNames('pissed', ['ronpissed'], 24, false);
+			portraitLeft.animation.addByNames('shock', ['ronshock'], 24, false);
+			portraitLeft.animation.addByNames('sad', ['ronsad'], 24, false);
+			portraitLeft.animation.addByNames('hell', ['ronhell'], 24, false);
+			portraitLeft.animation.addByNames('mad', ['ronmad'], 30, false);
 			portraitLeft.setGraphicSize(Std.int(portraitLeft.width + PlayState.daPixelZoom * 0.175));
 			portraitLeft.updateHitbox();
 			portraitLeft.scrollFactor.set();
@@ -191,7 +188,6 @@ class DialogueBox extends FlxSpriteGroup
 			portraitLeft.visible = false;
 		}
 		
-
 
 		portraitRight = new FlxSprite(700, 100);
 		portraitRight.frames = Paths.getSparrowAtlas('diaman/bfPortrait');
