@@ -49,6 +49,7 @@ class OptionsMenu extends MusicBeatState
 			new SongPositionOption("Show the songs current position (as a bar)"),
 			new CpuStrums("CPU's strumline lights up when a note hits it."),
 			#end
+			new Language("Change your language. (Right for pt-br, Left for es-la, Enter for en-us)"),
 		]),
 		
 		new OptionCategory("Misc", [
