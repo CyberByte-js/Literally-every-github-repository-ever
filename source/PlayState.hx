@@ -338,40 +338,26 @@ class PlayState extends MusicBeatState
 		Conductor.changeBPM(SONG.bpm);
 
 		trace('INFORMATION ABOUT WHAT U PLAYIN WIT:\nFRAMES: ' + PlayStateChangeables.safeFrames + '\nZONE: ' + Conductor.safeZoneOffset + '\nTS: ' + Conductor.timeScale + '\nBotPlay : ' + PlayStateChangeables.botPlay);
-	
+
 		//dialogue shit
 		switch (songLowercase)
 		{
-			case 'tutorial':
-				dialogue = ["Hey you're pretty cute.", 'Use the arrow keys to keep up \nwith me singing.'];
-			case 'bopeebo':
-				dialogue = [
-					'HEY!',
-					"You think you can just sing\nwith my daughter like that?",
-					"If you want to date her...",
-					"You're going to have to go \nthrough ME first!"
-				];
-			case 'fresh':
-				dialogue = ["Not too shabby boy.", ""];
-			case 'dadbattle':
-				dialogue = [
-					"gah you think you're hot stuff?",
-					"If you can beat me here...",
-					"Only then I will even CONSIDER letting you\ndate my daughter!"
-				];
-			case 'senpai':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('senpai/senpaiDialogue'));
-			case 'roses':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('roses/rosesDialogue'));
-			case 'thorns':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('thorns/thornsDialogue'));
 			case 'ron':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('ron/'));
+				switch (FlxG.save.data.lang)
+				{
+					case 'es-la':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackES'));
+					case 'en-us':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBack'));
+					case 'pt-br':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackPT'));
+				}
 			case 'ayo':
 				dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diaman'));
 			case 'bloodshed':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diameeee'));
+				dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamane'));
 		}
+		
 
 		//defaults if no stage was found in chart
 		var stageCheck:String = 'stage';
