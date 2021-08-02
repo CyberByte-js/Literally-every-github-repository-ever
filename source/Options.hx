@@ -70,6 +70,7 @@ class Option
 	private function updateDisplay():String { return throw "stub!"; }
 	public function left():Bool { return throw "stub!"; }
 	public function right():Bool { return throw "stub!"; }
+	public function up():Bool { return throw "stub!"; }
 }
 
 
@@ -696,5 +697,43 @@ class CamZoomOption extends Option
 	private override function updateDisplay():String
 	{
 		return "Camera Zoom " + (!FlxG.save.data.camzoom ? "off" : "on");
+	}
+}
+
+class Language extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+		acceptValues = true;
+	}
+	
+	public override function press():Bool
+	{
+		FlxG.save.data.lang = 'en-us';
+		return true;
+	}
+
+	public override function right():Bool 
+	{
+		FlxG.save.data.lang = 'pt-br';
+		return true;
+	}
+
+	public override function left():Bool 
+	{
+		FlxG.save.data.lang = 'es-la';
+		return true;
+	}
+	
+	private override function updateDisplay():String
+	{
+		return "Language";
+	}
+
+	override function getValue():String
+	{
+		return "Current Language: " + FlxG.save.data.lang;
 	}
 }
