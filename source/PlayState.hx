@@ -353,9 +353,26 @@ class PlayState extends MusicBeatState
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackPT'));
 				}
 			case 'ayo':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diaman'));
+				switch (FlxG.save.data.lang)
+				{
+					case 'en-us':		
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diaman'));
+					case 'es-la':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamanES'));
+					case 'pt-br':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamanPT'));
+				}
 			case 'bloodshed':
-				dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamane'));
+				switch (FlxG.save.data.lang)
+				{
+					case 'en-us':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamane'));
+					case 'es-la':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamaneES'));
+					case 'pt-br':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamanePT'));
+				}
+				
 		}
 		
 
