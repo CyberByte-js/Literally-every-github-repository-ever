@@ -351,6 +351,8 @@ class PlayState extends MusicBeatState
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBack'));
 					case 'pt-br':
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackPT'));
+					case 'ger':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackgerman'));
 				}
 			case 'ayo':
 				switch (FlxG.save.data.lang)
@@ -361,6 +363,8 @@ class PlayState extends MusicBeatState
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamanES'));
 					case 'pt-br':
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamanPT'));
+					case 'ger':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamangerman'));
 				}
 			case 'bloodshed':
 				switch (FlxG.save.data.lang)
@@ -371,6 +375,8 @@ class PlayState extends MusicBeatState
 						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamaneES'));
 					case 'pt-br':
 						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamanePT'));
+					case 'ger':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamanegerman'));
 				}
 				
 		}
