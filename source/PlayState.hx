@@ -3969,6 +3969,30 @@ class PlayState extends MusicBeatState
 				lightningStrikeShit();
 			}
 		}
+
+		if (curSong == 'Ron')
+			{
+				if (curBeat == 7)
+				{
+					FlxTween.tween(FlxG.camera, {zoom: 1.5}, 0.4, {ease: FlxEase.expoOut,});
+					dad.playAnim('cheer', true);
+				}
+				else if (curBeat == 119)
+				{
+					FlxTween.tween(FlxG.camera, {zoom: 1.5}, 0.4, {ease: FlxEase.expoOut,});
+					dad.playAnim('cheer', true);
+				}
+				else if (curBeat == 215)
+				{
+					FlxG.camera.follow(dad, LOCKON, 0.04 * (30 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
+					FlxTween.tween(FlxG.camera, {zoom: 1.5}, 0.4, {ease: FlxEase.expoOut,});
+					dad.playAnim('cheer', true);
+				}
+				else
+				{
+					FlxG.camera.follow(camFollow, LOCKON, 0.04 * (30 / (cast (Lib.current.getChildAt(0), Main)).getFPS()));
+				}
+			}
 	}
 
 	var curLight:Int = 0;
