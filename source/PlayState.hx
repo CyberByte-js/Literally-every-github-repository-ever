@@ -3970,6 +3970,24 @@ class PlayState extends MusicBeatState
 			}
 		}
 
+		if (curBeat == 2 && curSong == 'Ron')
+			{
+				var bruh:FlxSprite = new FlxSprite();
+				bruh.loadGraphic(Paths.image('ron/longbob'));
+				bruh.antialiasing = true;
+				bruh.active = false;
+				bruh.scrollFactor.set();
+				bruh.screenCenter();
+				add(bruh);
+				FlxTween.tween(bruh, {alpha: 0},1, {
+					ease: FlxEase.cubeInOut,
+					onComplete: function(twn:FlxTween)
+					{
+						bruh.destroy();
+					}
+				});
+			}
+
 		if (curSong == 'Ron')
 			{
 				if (curBeat == 7)
