@@ -49,7 +49,7 @@ class OptionsMenu extends MusicBeatState
 			new SongPositionOption("Show the songs current position (as a bar)"),
 			new CpuStrums("CPU's strumline lights up when a note hits it."),
 			#end
-			new Language("Change your language. (Right for pt-br, Left for es-la, Enter for en-us)"),
+			
 		]),
 		
 		new OptionCategory("Misc", [
@@ -63,6 +63,7 @@ class OptionsMenu extends MusicBeatState
 			new ShowInput("Display every single input in the score screen."),
 			new Optimization("No backgrounds, no characters, centered notes, no player 2."),
 			new BotPlay("Showcase your charts and mods with autoplay."),
+			new Language("Change your language. (Right for pt-br, Left for es-la, Enter for en-us, Alt for ger, F4 for fr)"),
 		])
 		
 	];
@@ -185,6 +186,10 @@ class OptionsMenu extends MusicBeatState
 							currentSelectedCat.getOptions()[curSelected].right();
 						if (FlxG.keys.justPressed.LEFT)
 							currentSelectedCat.getOptions()[curSelected].left();
+						if (FlxG.keys.justPressed.ALT)
+							currentSelectedCat.getOptions()[curSelected].alt();
+						if (FlxG.keys.justPressed.F4)
+							currentSelectedCat.getOptions()[curSelected].alt();
 					}
 				}
 				else
