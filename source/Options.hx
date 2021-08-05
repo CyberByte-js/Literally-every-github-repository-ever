@@ -71,6 +71,8 @@ class Option
 	public function left():Bool { return throw "stub!"; }
 	public function right():Bool { return throw "stub!"; }
 	public function up():Bool { return throw "stub!"; }
+	public function alt():Bool { return throw "no"; }
+	public function f4():Bool { return throw "i hate you kade"; }
 }
 
 
@@ -724,6 +726,18 @@ class Language extends Option
 	public override function left():Bool 
 	{
 		FlxG.save.data.lang = 'es-la';
+		return true;
+	}
+
+	public override function alt():Bool 
+	{
+		FlxG.save.data.lang = 'ger';
+		return true;
+	}
+
+	public override function alt():Bool 
+	{
+		FlxG.save.data.lang = 'fr';
 		return true;
 	}
 	
