@@ -99,6 +99,8 @@ class PlayState extends MusicBeatState
 
 	public static var noteBools:Array<Bool> = [false, false, false, false];
 
+	public var luigi:Bool = false;
+
 	var halloweenLevel:Bool = false;
 
 	var songLength:Float = 0;
@@ -353,6 +355,8 @@ class PlayState extends MusicBeatState
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackPT'));
 					case 'ger':
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackgerman'));
+					case 'fr':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ron/ronIsBackFR'));
 				}
 			case 'ayo':
 				switch (FlxG.save.data.lang)
@@ -365,6 +369,8 @@ class PlayState extends MusicBeatState
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamanPT'));
 					case 'ger':
 						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamangerman'));
+					case 'fr':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('ayo/diamanFR'));
 				}
 			case 'bloodshed':
 				switch (FlxG.save.data.lang)
@@ -377,6 +383,8 @@ class PlayState extends MusicBeatState
 						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamanePT'));
 					case 'ger':
 						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamanegerman'));
+					case 'fr':
+						dialogue = CoolUtil.coolTextFile(Paths.txt('bloodshed/diamaneFR'));
 				}
 				
 		}
@@ -2679,6 +2687,12 @@ class PlayState extends MusicBeatState
 
 	function endSong():Void
 	{
+		if (curSong == 'bloodshed')
+		{
+			luigi = true;
+		}
+
+
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN,handleInput);
 		if (useVideo)
 			{
@@ -3981,7 +3995,7 @@ class PlayState extends MusicBeatState
 				add(bruh);
 				FlxTween.tween(bruh, {alpha: 0},1, {
 					ease: FlxEase.cubeInOut,
-					onComplete: function(twn:FlxTween)
+					onComplete: function(twn:FlxTween) 
 					{
 						bruh.destroy();
 					}
