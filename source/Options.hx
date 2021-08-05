@@ -735,7 +735,7 @@ class Language extends Option
 		return true;
 	}
 
-	public override function alt():Bool 
+	public override function f4():Bool 
 	{
 		FlxG.save.data.lang = 'fr';
 		return true;
